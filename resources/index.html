@@ -1,14 +1,46 @@
 <!doctype html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>hi, world!</title>
-  </head>
-  <body>
-    <h1>owlet-status-ui</h1>
-    <div id="container"></div>
-    <script type="text/javascript" src="js/app.js"></script>
-  </body>
+    <title>owlet.status</title>
+    <link rel="stylesheet" type="text/css" href="/cljsjs/plottable/common/plottable.css">
+    <link rel="stylesheet" href="
+https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+    <style>
+        body {
+            background-color: #eceeef;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-push-3 col-lg-6 col-lg-pull-3">
+            <div class="jumbotron">
+                <h1 class="text-center">owlet-status(es)</h1>
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        var script = document.createElement('script');
+        script.onload = function () {
+            var stats = new Stats();
+            stats.showPanel(0);
+            document.body.appendChild(stats.dom);
+            requestAnimationFrame(function loop() {
+                stats.update();
+                requestAnimationFrame(loop)
+            });
+        };
+        script.src = '//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';
+        document.head.appendChild(script);
+    })()
+</script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
 </html>
