@@ -24,9 +24,8 @@
 
 (deftask build []
   (comp (speak)
-        
-        (cljs)
-        ))
+        (sift :add-jar {'cljsjs/plottable #"^cljsjs/plottable/common/plottable.css$"})
+        (cljs)))
 
 (deftask run []
   (comp (serve :port 5000)
@@ -37,7 +36,6 @@
 
 (deftask production []
   (task-options! cljs {:optimizations :advanced})
-  (sift :add-jar {'cljsjs/plottable #"^cljsjs/plottable/common/plottable.css$"})
   identity)
 
 (deftask development []
