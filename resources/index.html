@@ -6,8 +6,7 @@
     <meta name="description" content="">
     <title>owlet.status</title>
     <link rel="stylesheet" type="text/css" href="/cljsjs/plottable/common/plottable.css">
-    <link rel="stylesheet" href="
-https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
     <style>
         body {
             background-color: #eceeef;
@@ -25,22 +24,6 @@ https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstr
         </div>
     </div>
 </div>
-<script>
-    (function () {
-        var script = document.createElement('script');
-        script.onload = function () {
-            var stats = new Stats();
-            stats.showPanel(0);
-            document.body.appendChild(stats.dom);
-            requestAnimationFrame(function loop() {
-                stats.update();
-                requestAnimationFrame(loop)
-            });
-        };
-        script.src = '//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';
-        document.head.appendChild(script);
-    })()
-</script>
 <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

@@ -77,11 +77,11 @@
         (let [w {:with-credentials? false}]
              (go
                (let [res (<! (http/get (str "http://localhost:3000/api/ping/" domain) w))]
-                    (swap! statuses conj (str domain " : " (get-in res [:body :time]))))))
+                    (swap! statuses conj (str domain " : " (get-in res [:body :time]) " ms")))))
         (GET (str "http://localhost:3000/api/ping/" domain)
              {:keywords? true
               :handler   (fn [res]
-                             (swap! statuses conj (str domain " : " (get res "time"))))})))
+                             (swap! statuses conj (str domain " : " (get res "time") " ms")))})))
 
 (defn list-component []
       [:ul

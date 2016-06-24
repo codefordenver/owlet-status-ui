@@ -37,6 +37,7 @@
 
 (deftask production []
   (task-options! cljs {:optimizations :advanced})
+  (sift :add-jar {'cljsjs/plottable #"^cljsjs/plottable/common/plottable.css$"})
   identity)
 
 (deftask development []
